@@ -113,7 +113,8 @@ function generatePassword() {
   var upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
   var numericCharacters = "0123456789";
-  var specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"; // NOTE: \" is the double quote character in a string
+  /*  NOTE: \" is the double quote character in a string, and \\ is the backslash character in a string. */
+  var specialCharacters = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
 
   /*
    *  Next, we initialize our list of all acceptable password characters and set it based on the selections in the confirmation box before.
@@ -153,18 +154,11 @@ function generatePassword() {
     *  
     *  First, we generate a random number that is a valid index for the acceptable character list.
     *  A valid index would be from 0 to acceptablePasswordCharacters.length - 1.
-    * 
-    *  Credit goes to:
-    *  https://www.programiz.com/javascript/examples/generate-random-strings#:~:text=random()%20method%20is%20used,a%20random%20character%20is%20generated.
-    *  to generate an integer between two values.
     */
-    var max = acceptablePasswordCharacters.length - 1;
-    var min = 0;
-
-    var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    var randomIndex = Math.floor(Math.random() * acceptablePasswordCharacters.length);
 
     /* Then we select the character to add from that list using that index. */
-    var charToAdd = acceptablePasswordCharacters[randomNumber];
+    var charToAdd = acceptablePasswordCharacters[randomIndex];
 
     /*
     *  8. b. ii. Add the character to the password we are creating.
