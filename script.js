@@ -35,15 +35,46 @@ function generatePassword() {
    */
   var passwordLength = parseInt(prompt("Enter a password length (the value must be an integer between 8 and 128): "));
 
-  console.log(passwordLength);
-  console.log(typeof passwordLength);
-
   /*
    *  2. If the length of the password is not within the proper range, complain and stop. Otherwise, continue.
+   *
+   *  NOTE: If password length is equal to NaN, it means that the user entered something that was not a number,
+   *  such as a string.
    */
   if (passwordLength === NaN || passwordLength < 8 || passwordLength > 128) {
     alert("ERROR: The password length must be an integer between 8 and 128 (inclusive).");
 
-    return;
+    /* Just return an empty string so the password display box doesn't display anything inappropriate. */
+    return "";
+  }
+
+  /*
+   *  3. Ask the user if they want upper case letters included in the password.
+   */
+  var includesUpperCase = confirm("Include upper case characters in your password?");
+
+  /*
+   *  4. Ask the user if they want lower case letters included in the password.
+   */
+  var includesLowerCase = confirm("Include lower case characters in your password?");
+
+  /*
+   *  5. Ask the user if they want numeric values included in the password.
+   */
+  var includesNumeric = confirm("Include numeric characters in your password?");
+
+  /*
+   *  6. Ask the user if they want special characters included in the password.
+   */
+  var includesSpecial = confirm("Include special characters in your password?");
+
+  /*
+   *  7. If the user responds 'No' to the previous 4 steps, complain and quit. Otherwise, continue with generation.
+   */
+  if (!includesUpperCase && !includesLowerCase && !includesNumeric && !includesSpecial) {
+    alert("ERROR: You must include at least one character type in your password.");
+
+    /* Just return an empty string so the password display box doesn't display anything inappropriate. */
+    return "";
   }
 }
