@@ -1,2 +1,9 @@
-# password-generator
-Generates a password given some specifications using JavaScript
+# Password Generator
+
+## Description
+
+## Key Features
+
+## Usage
+
+## Credits
