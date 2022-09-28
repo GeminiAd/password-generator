@@ -34,11 +34,11 @@ function generatePassword() {
   /* 
    *  1. Prompt the user for a password length.
    */
-  var userResponse = prompt("Enter a password length (the value must be an integer between 8 and 128): ");
+  var userResponse = prompt("Enter a password length (the value must be an integer of at least 8 and at most 128): ");
 
   /* If userResponse is null here, that means the user clicked "Cancel", and we should quit. */
   if (userResponse === null) {
-    alert("ERROR: The password length must be an integer between 8 and 128 (inclusive).");
+    alert("ERROR: The password length must be an integer of at least 8 and at most 128.");
 
     /* Just return an empty string so the password display box doesn't display anything inappropriate. */
     return "";
@@ -53,7 +53,7 @@ function generatePassword() {
    *  such as a string.
    */
   if (passwordLength === NaN || passwordLength < 8 || passwordLength > 128) {
-    alert("ERROR: The password length must be an integer between 8 and 128 (inclusive).");
+    alert("ERROR: The password length must be an integer of at least 8 and at most 128.");
 
     /* Just return an empty string so the password display box doesn't display anything inappropriate. */
     return "";
