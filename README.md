@@ -1,5 +1,9 @@
 # Password Generator
 
+<https://geminiad.github.io/password-generator>
+
+------------------------------------------------
+
 <a href="#description">Description</a> •
 <a href="#key-features">Key Features</a> •
 <a href="#usage">Usage</a> •
@@ -15,7 +19,7 @@ It's a website with a button and a text area. When you hit the button, a random 
 
 ## Key Features
 
-Boasts a responsive design. It looks good on a desktop, tablet, or smartphone.
+Generate a password at the click of a button! Boasts a responsive design: it looks good on a desktop, tablet, or smartphone.
 
 ## Usage
 
